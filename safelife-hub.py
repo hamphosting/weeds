@@ -1,6 +1,7 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import requests
+import json
 safever = 1.2 # Please dont change this. This lets the client know how to communicate with this.
 print(f"Running SafeLife Hub V{str(safever)}")
 mainhub = True # Please change this to false. This is letting the server know that this is the main server. Other servers use this to update.
