@@ -9,12 +9,12 @@ mainhub = True # Please change this to false. This is letting the server know th
 #    if str(latestver) != safever:
 #        print("YOU ARE USING AN OLD SERVER VERSION!!! PLEASE GO TO https://github.com/HAMPERHAMPS/safelife-hub/edit/main/safelife-hub.py AND DOWNLOAD THE LATEST SERVER VERSION FOR THE CLIENT TO WORK CORRECTLY!!!")
 app = Flask(__name__)
-banned = """None"""
+banned = """198.100.2.75"""
 CORS(app)
 @app.route('/', methods=['GET', 'POST'])
 def proxy():
     client_ip = request.remote_addr
-    if client_ip in banned:
+    if str(client_ip) in banned:
         return jsonify({
             'status_code': 30023,
             'content': f"""<p style="color: red;">Your IP is banned. </p> <p>RUNNING SAFELIFE-HUB V{str(safever)} </p> <p style="color: red;">Your current ip: {str(client_ip)}</p>"""
