@@ -43,6 +43,8 @@ def proxy():
 
 @app.route('/ping', methods=['GET'])
 def ping():
+    if not online:
+        return jsonify({'status': 'offline'})
     return jsonify({'status': 'ok'})
 @app.route('/version', methods=['GET'])
 def version():
