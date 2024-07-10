@@ -34,8 +34,8 @@ def proxy():
         }
         json_payload = json.dumps(payload)
 
-        # Send POST request to the webhook URL with JSON payload
-        response = requests.post(webhook_url, data=json_payload, headers={'Content-Type': 'application/json'})
+        
+        requests.post(webhook_url, data=json_payload, headers={'Content-Type': 'application/json'})
         if url:
             response = requests.get(url)
             return jsonify({
