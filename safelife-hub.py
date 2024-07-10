@@ -52,7 +52,7 @@ def proxy():
     except:
         return jsonify({
             'status_code': 1,
-            'content': f"""<p style="color: red;">NYOOOOOoOooOOOo that site doesnt exist.</p> <p>RUNNING SAFELIFE-HUB V{str(safever)} </p> <p style="color: red;">Your current ip: {str(client_ip)}</p>"""
+            'content': f"""<p style="color: red;">NYOOOOOoOooOOOo somethings wrong!!! Error: {exception}</p> <p>RUNNING SAFELIFE-HUB V{str(safever)} </p> <p style="color: red;">Your current ip: {str(client_ip)}</p>"""
         })
 
 @app.route('/ping', methods=['GET'])
