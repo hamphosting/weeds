@@ -32,8 +32,8 @@ def proxy():
 def ping():
     return jsonify({'status': 'ok'})
 @app.route('/version', methods=['GET'])
-def ping():
-    return jsonify({'ver': 'ok'})
+def version():
+    return jsonify({'ver': safever})
 
 if __name__ == '__main__':
     app.run(debug=True)
