@@ -1,7 +1,8 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import requests
-
+safever = 1.0
+print(f"Running SafeLife Hub V{str(safever)}")
 app = Flask(__name__)
 CORS(app)
 @app.route('/', methods=['GET', 'POST'])
@@ -24,7 +25,7 @@ def proxy():
 
 @app.route('/ping', methods=['GET'])
 def ping():
-    return jsonify('Ping')
+    return jsonify(str(safever))
 
 if __name__ == '__main__':
     app.run(debug=True)
