@@ -30,7 +30,7 @@ def proxy():
 
 @app.route('/ping', methods=['GET'])
 def ping():
-    return jsonify(str(safever))
+    return jsonify({'ver': safever})
 
 if __name__ == '__main__':
     app.run(debug=True)
