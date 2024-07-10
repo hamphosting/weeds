@@ -28,7 +28,7 @@ def proxy():
             'content': f"""<p style="color: red;">NYOOOOOoOooOOOo that site doesnt exist.</p> <p>RUNNING SAFELIFE-HUB V{str(safever)}"""
         })
 
-@app.route('/ping', methods=['GET'])
+@app.route('ping', methods=['GET'])
 def ping():
     return jsonify(str(safever))
 
