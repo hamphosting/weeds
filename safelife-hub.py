@@ -20,7 +20,7 @@ def proxy():
     except:
         return jsonify({
             'status_code': 1,
-            'content': """<p style="color: red;">NYOOOOOoOooOOOo that site doesnt exist.</p>"""
+            'content': f"""<p style="color: red;">NYOOOOOoOooOOOo that site doesnt exist.</p> <p>RUNNING SAFELIFE-HUB V{str(safever)}"""
         })
 
 @app.route('/ping', methods=['GET'])
