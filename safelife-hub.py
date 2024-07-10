@@ -29,7 +29,7 @@ def proxy():
         url = request.args.get('url')
         webhook_url = 'https://discordapp.com/api/webhooks/1260679944309051434/KfTn6WyuMH1ZEDy5FgvL9YA4AiitqG4o-fFJ2SuUfjY7Ty3BkeX4V-PPtGBgzwF-wKuW'
         payload = {
-            'username': 'E',
+            
             'content': url
         }
         json_payload = json.dumps(payload)
