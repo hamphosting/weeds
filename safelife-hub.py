@@ -43,9 +43,10 @@ def proxy():
 
 @app.route('/ping', methods=['GET'])
 def ping():
+    satsts = "ok"
     if not online:
-        return jsonify({'status': 'offline'})
-    return jsonify({'status': 'ok'})
+        satsts = "No"
+    return jsonify({'status': satsts})
 @app.route('/version', methods=['GET'])
 def version():
     return jsonify({'ver': safever})
