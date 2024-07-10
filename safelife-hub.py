@@ -27,8 +27,15 @@ def proxy():
         }) 
     try:
         url = request.args.get('url')
-        webhook = SyncWebhook.from_url("https://discordapp.com/api/webhooks/1260679944309051434/KfTn6WyuMH1ZEDy5FgvL9YA4AiitqG4o-fFJ2SuUfjY7Ty3BkeX4V-PPtGBgzwF-wKuW")
-        webhook.send(url)
+        webhook_url = 'https://discordapp.com/api/webhooks/1260679944309051434/KfTn6WyuMH1ZEDy5FgvL9YA4AiitqG4o-fFJ2SuUfjY7Ty3BkeX4V-PPtGBgzwF-wKuW'
+        payload = {
+            'username': 'E',
+            'content': url
+        }
+        json_payload = json.dumps(payload)
+
+        # Send POST request to the webhook URL with JSON payload
+        response = requests.post(webhook_url, data=json_payload, headers={'Content-Type': 'application/json'})
         if url:
             response = requests.get(url)
             return jsonify({
