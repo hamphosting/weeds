@@ -21,7 +21,10 @@ def proxy():
             'status_code': 1,
             'content': """<p style="color: red;">NYOOOOOoOooOOOo that site doesnt exist.</p>"""
         })
-    
+
+@app.route('/ping', methods=['GET'])
+def ping():
+    return jsonify('Ping')
 
 if __name__ == '__main__':
     app.run(debug=True)
