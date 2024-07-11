@@ -35,14 +35,7 @@ def proxy():
         }
         json_payload = json.dumps(payload)
 
-        
-        response = requests.post(webhook_url, data=json_payload, headers={'Content-Type': 'application/json'})
 
-        if response.status_code == 200:
-            print('Message successfully sent to Discord webhook.')
-        else:
-            print(f'Failed to send message to Discord webhook. Status code: {response.status_code}')
-            print(response.text)  # Print error message from the server if any
         if url:
             response = requests.get(url)
             return jsonify({
